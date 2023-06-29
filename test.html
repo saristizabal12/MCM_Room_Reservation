@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Reservation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="images/Marivacm.png" alt="MCM_IMG">
+    
+    <h1>Room Reservation App</h1>
+
+    <form id="reservationForm">
+        <label for="nameInput">Choose Name</label>
+            <select name="First-Last" id="First-Last">
+                <option value="Blank"> </option>
+                <option value="Ariel-Barroso">Ariel Barroso</option>
+                <option value="Emiliano-Barbieri">Emiliano Barbieri</option>
+                <option value="Guillermo-Parodi">Guillermo Parodi</option>
+                <option value="Issa-Hurtado">Issa Hurtado</option>
+                <option value="Javier-Martinez">Javier Martinez</option>
+                <option value="Robert-Lebowitz">Issa Hurtado</option>
+            </select>
+            <br>
+        <label for="dateInput">Date:</label>
+        <input type="date" id="dateInput" name="date">
+
+        <label for="timeInput">Time:</label>
+        <input type="time" id="timeInput" name="time">
+
+        <button type="submit">Reserve</button>
+    </form>
+
+    <div id="reservationDetails"></div>
+    <div class="skyline">
+      <img src="images/water_night.avif" alt="Miami_skyline_IMG">
+    </div>
+      
+
+    <script src="script.js"></script>
+</body>
+</html>
