@@ -21,18 +21,100 @@
 //     });
 //   });
 
-h1 {
-    color: #000;
-    /* font-size: large; */
-    /* font-weight: bold; */
-    text-align: center;
-    border: #920049;
-    border-radius: 22px;
+
+
+// const form = document.getElementById('reservationForm');
+// const reservationDetails = document.getElementById('reservationDetails');
+
+// form.addEventListener('submit', function(event) {
+//     event.preventDefault();
+    
+//     const name = document.getElementById('nameInput').value;
+//     const room = document.getElementById('roomInput').value;
+//     const date = document.getElementById('dateInput').value;
+//     const time = document.getElementById('timeInput').value;
+
+//     const reservation = {
+//         name: name,
+//         room: room,
+//         date: date,
+//         time: time
+//     };
+
+//     displayReservation(reservation);
+//     clearForm();
+// });
+
+// function displayReservation(reservation) {
+//     const reservationBox = document.createElement('div');
+//     reservationBox.classList.add('reservation-box');
+
+//     const reservationInfo = document.createElement('p');
+//     reservationInfo.innerHTML = `
+//         <strong>Name:</strong> ${reservation.name}<br>
+//         <strong>Room:</strong> ${reservation.room}<br>
+//         <strong>Date:</strong> ${reservation.date}<br>
+//         <strong>Time:</strong> ${reservation.time}
+//     `;
+
+//     reservationBox.appendChild(reservationInfo);
+//     reservationDetails.appendChild(reservationBox);
+// }
+
+// function clearForm() {
+//     form.reset();
+// }
+
+
+
+const form = document.getElementById('reservationForm');
+const reservationDetails = document.getElementById('reservationDetails');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('nameInput').value;
+    const room = document.getElementById('roomInput').value;
+    
+    const dateInput = document.getElementById('dateInput');
+    const selectedDate = new Date(dateInput.value);
+    const options = { 
+        month: '2-digit', 
+        day: '2-digit', 
+        year: 'numeric' 
+    };
+    const formattedDate = selectedDate.toLocaleDateString('en-US', options);
+    const date = formattedDate;
+
+    const time = document.getElementById('timeInput').value;
+
+    const reservation = {
+        name: name,
+        room: room,
+        date: date,
+        time: time
+    };
+
+    displayReservation(reservation);
+    clearForm();
+});
+
+function displayReservation(reservation) {
+    const reservationBox = document.createElement('div');
+    reservationBox.classList.add('reservation-box');
+
+    const reservationInfo = document.createElement('p');
+    reservationInfo.innerHTML = `
+        <strong>Name:</strong> ${reservation.name}<br>
+        <strong>Room:</strong> ${reservation.room}<br>
+        <strong>Date:</strong> ${reservation.date}<br>
+        <strong>Time:</strong> ${reservation.time}
+    `;
+
+    reservationBox.appendChild(reservationInfo);
+    reservationDetails.appendChild(reservationBox);
 }
 
-padding: 10px 20px;
-    background-color: #920049;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+function clearForm() {
+    form.reset();
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Reservation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="images/Marivacm.png" alt="MCM_IMG">
+    
+    <h1>Room Reservation App</h1>
+
+    <form id="reservationForm">
+        <!-- Form inputs -->
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+
+        <button type="submit" onclick="sendEmail()">Reserve</button>
+    </form>
+
+    <div id="reservationDetails">
+        <h2>Reservation Details:</h2>
+    </div>
+
+    <div class="skyline">
+        <img src="images/water_night.avif" alt="Miami_skyline_IMG">
+        <div id="reservationDetails"></div>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host: "smtp.outlook.com",
+                Username: "aristizabals@marivacm.com",
+                Password: "#",
+                To: "aristizabals@marivacm.com",
+                From: document.getElementById("email").value,
+                Subject: "This is the subject",
+                Body: "And this is the body"
+            }).then(
+                message => alert(message)
+            )
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

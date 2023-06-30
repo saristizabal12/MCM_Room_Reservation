@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,11 +16,25 @@
             <select name="First-Last" id="First-Last">
                 <option value="Blank"> </option>
                 <option value="Ariel-Barroso">Ariel Barroso</option>
+                <option value="Cynthia-Cordero">Cynthia Cordero</option>
                 <option value="Emiliano-Barbieri">Emiliano Barbieri</option>
+                <option value="Francisco-Grether ">Francisco Grether</option>
                 <option value="Guillermo-Parodi">Guillermo Parodi</option>
                 <option value="Issa-Hurtado">Issa Hurtado</option>
                 <option value="Javier-Martinez">Javier Martinez</option>
+                <option value="Natalia-Pazmino">Natalia Pazmino</option>
                 <option value="Robert-Lebowitz">Issa Hurtado</option>
+                <option value="Santiago-Caviedes">Santiago Caviedes</option>
+                <option value="Sebastian-Aristizabal">Sebastian Aristizabal</option>
+                <option value="Susana-Gaitan">Susana Gaitan</option>
+                <option value="Victor-Lugo">Victor Lugo</option>
+            </select>
+            <br>
+        <label for="roomInput">Choose Room</label>
+            <select name="First-Last" id="First-Last">
+                <option value="Blank2"> </option>
+                <option value="PH4">PH4 - Room 1 </option>    
+                <option value="PH3">PH3 - Room 2 </option>
             </select>
             <br>
         <label for="dateInput">Date:</label>
@@ -36,8 +50,98 @@
     <div class="skyline">
       <img src="images/water_night.avif" alt="Miami_skyline_IMG">
     </div>
+    
+    <div id="reservationDetails">
+        <h2>Reservation Details:</h2>
+      </div>
       
+    <script src="script.js"></script>
+</body>
+</html> -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Reservation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="images/Marivacm.png" alt="MCM_IMG">
+    
+    <h1>Room Reservation App</h1>
+
+    <form id="reservationForm">
+        <label for="nameInput">Choose Name</label>
+        <select name="First-Last" id="nameInput">
+            <option value="Blank"> </option>
+                <option value="Ariel-Barroso">Ariel Barroso</option>
+                <option value="Cynthia-Cordero">Cynthia Cordero</option>
+                <option value="Emiliano-Barbieri">Emiliano Barbieri</option>
+                <option value="Francisco-Grether ">Francisco Grether</option>
+                <option value="Guillermo-Parodi">Guillermo Parodi</option>
+                <option value="Issa-Hurtado">Issa Hurtado</option>
+                <option value="Javier-Martinez">Javier Martinez</option>
+                <option value="Natalia-Pazmino">Natalia Pazmino</option>
+                <option value="Robert-Lebowitz">Issa Hurtado</option>
+                <option value="Santiago-Caviedes">Santiago Caviedes</option>
+                <option value="Sebastian-Aristizabal">Sebastian Aristizabal</option>
+                <option value="Susana-Gaitan">Susana Gaitan</option>
+                <option value="Victor-Lugo">Victor Lugo</option>
+        </select>
+        <br>
+        <label for="roomInput">Choose Room</label>
+        <select name="First-Last" id="roomInput">
+            <option value="Blank2"> </option>
+                <option value="PH4">PH4 - Room 1</option>    
+                <option value="PH3">PH3 - Room 2</option>
+        </select>
+        <br>
+        <label for="dateInput">Date:</label>
+        <input type="date" id="dateInput" name="date">
+
+        <label for="timeInput">Time:</label>
+        <input type="time" id="timeInput" name="time">
+
+        <button type="submit">Reserve</button>
+    </form>
+
+    <div id="reservationDetails">
+        <h2>Reservation Details:</h2>
+    </div>
+        <div class="skyline">
+        <img src="images/water_night.avif" alt="Miami_skyline_IMG">
+            <div id="reservationDetails"></div>
+    </div>
+
+    <!-- <div class="container">
+        <form>
+            <h3>Get in touch</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Email id" required>
+            <input type="text" id="text" placeholder="phone no" required>
+
+        </form> -->
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.outlook.com",
+                Username : "aristizabals@marivacm.com",
+                Password : "#",
+                To : "aristizabals@marivacm.com",
+                From : document.getElementById("email").value,
+                Subject : " This is the subject",
+                Body : "And this is the body"
+            }).then(
+                message => alert(message)
+            )
+        }
+
+    </script>
+      
     <script src="script.js"></script>
 </body>
 </html>
